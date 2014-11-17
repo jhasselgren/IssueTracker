@@ -1,0 +1,95 @@
+
+.panel.panel-default
+	.panel-heading
+		.row
+			.col-lg-10
+				h3.panel-title {{ctrl.data.id}}. {{ctrl.data.title}} 
+			.col-lg-2.pull-right.text-right
+				i.fa.fa-pencil-square-o
+	.panel-body
+		.row.row-centered
+			.col-lg-11.col-centered
+				h4 Description
+				p {{ctrl.data.description}}
+		.row.row-centered
+			.col-xs-11.col-sm-11.col-md-11.col-lg-12.col-centered
+				.well
+					fieldset
+						.col-xs-12.col-sm-12.col-md-12.col-lg-12
+							h4 Information
+						.form-group
+							label.col-lg-3 Recommender
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.recommender}}
+						.form-group
+							label.col-lg-3 Decision Type
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.decisionType}}
+						.form-group
+							label.col-lg-3 Decision Forum
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.decisionForum}}
+						.form-group
+							label.col-lg-3 Decision Owner
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.decisionOwner}}
+						.form-group
+							label.col-lg-3 Status
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.status}}
+						.form-group
+							label.col-lg-3 Created
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.created}}
+						.form-group
+							label.col-lg-3 Plan Decision Date
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.planDecisionDate}}
+						.form-group
+							label.col-lg-3 Actual Decision Date
+							.col-xs-9.col-sm-9.col-md-9.col-lg-9
+								p {{ctrl.data.actualDecisionDate}}
+					
+		.row.equal
+			.col-xs-12.col-sm-12.col-md-4.col-lg-4
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title 
+							|Option 1:<br/>
+							|Keep functionality 
+							|in TSS and manage pick up 
+							|transport operations in TSS
+					.panel-body
+						p  	
+							|<i class="fa fa-plus"></i> No disruption of current process for managing distribution services
+						p		
+							|<i class="fa fa-plus"></i> All current capability for within POL(MAM) will be maintained
+						p		
+							|<i class="fa fa-plus"></i> Minimum development needs within DDS.
+			.col-xs-12.col-sm-12.col-md-4.col-lg-4
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title 
+							|Option 2:<br/>
+							|Develop TSS capability in DDS and adopt DDS process
+					.panel-body
+						p		
+							|<i class="fa fa-minus"></i>  Multiple changes need to be performed DSS and in surrounding systems, interfaces (SAP etc.)
+			.col-xs-12.col-sm-12.col-md-4.col-lg-4
+				.panel.panel-primary
+					.panel-heading
+						h3.panel-title 
+							|Option 3:<br/>
+							|Adopt DDS and NO process to current DK process
+					.panel-body.text-
+						p 		
+							|<i class="fa fa-minus"></i> Capability to manage and control transport operations will decreased leading to increase in operational costs
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12
+				.alert.alert-success
+						|<strong>Recommendation:</strong> {{ctrl.data.recommendation}}
+
+		.row
+			.col-xs-12.col-sm-12.col-md-12.col-lg-12
+				.alert.alert-success
+					|<strong>Decision:</strong> {{ctrl.data.decision}}

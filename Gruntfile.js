@@ -4,7 +4,7 @@ module.exports = function(grunt){
 		copy: {
 			build: {
 				cwd: 'app_src',
-				src: ['**', '!**/*.jade', '!**/*.coffee'],
+				src: ['**', '!**/*.jade'],
 				dest: 'app',
 				expand: true
 			},
@@ -22,7 +22,7 @@ module.exports = function(grunt){
     			singleModule: true
 		    },
 		    src: ['app_src/**/*.tpl.html', 'app_src/**/*.tpl.jade'],
-		    dest: 'app/tmp/templates.js'
+		    dest: 'app/js/templates.js'
 		  }
 		},
 		jade: {
@@ -40,29 +40,29 @@ module.exports = function(grunt){
 				}]
 			},
 		},
-		coffee: {
-			compile: {
-				options: {
-				},
-				files: {
-					'app/js/app.js' :
-					[
-						'app_src/**/*.coffee'
-					]
-				}
-			}
-		},
+		//coffee: {
+		//	compile: {
+		//		options: {
+		//		},
+		//		files: {
+		//			'app/js/app.js' :
+		//			[
+		//				'app_src/**/*.coffee'
+		//			]
+		//		}
+		//	}
+		//},
 		watch: {
 			jade: {
 				files: 'app_src/**/*.jade',
 				tasks: [ 'jade', 'html2js' ]
 			},
-			coffee: {
-				files: 'app_src/**/*.coffee',
-				tasks: ['coffee']
-			},
+			//coffee: {
+			//	files: 'app_src/**/*.coffee',
+			//	tasks: ['coffee']
+			//},
 			copy: {
-				files: [ 'source/**', '!source/**/*.styl', '!source/**/*.coffee', '!source/**/*.jade' ],
+				files: [ 'app_src/**', '!app_src/**/*.styl', '!app_src/**/*.coffee', '!app_src/**/*.jade' ],
 				tasks: ['copy']
 			}
 		},
@@ -80,7 +80,7 @@ module.exports = function(grunt){
 	grunt.registerTask(
 	  'scripts', 
 	  'Compiles the JavaScript files.', 
-	  [ 'coffee', 'html2js' ]
+	  [ 'html2js' ]
 	);
 
 	grunt.registerTask(
@@ -98,7 +98,7 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-copy');
 	grunt.loadNpmTasks('grunt-contrib-clean');
 	grunt.loadNpmTasks('grunt-contrib-jade');
-	grunt.loadNpmTasks('grunt-contrib-coffee');
+	//grunt.loadNpmTasks('grunt-contrib-coffee');
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-html2js');
