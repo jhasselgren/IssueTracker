@@ -13,7 +13,7 @@
 })();
 
 (function(){
-	angular.module('decision-show', ['app.data'])
+	angular.module('decision-show', ['app.data', 'app.option'])
 	.directive('dDecisionShow', function(){
 		return{
 			restrict: 'E',

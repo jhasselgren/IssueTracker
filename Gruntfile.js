@@ -4,7 +4,7 @@ module.exports = function(grunt){
 		copy: {
 			build: {
 				cwd: 'app_src',
-				src: ['**', '!**/*.jade'],
+				src: ['**', '!**/*.jade', '!js/**/*.js'],
 				dest: 'app',
 				expand: true
 			},
@@ -25,6 +25,15 @@ module.exports = function(grunt){
 		    dest: 'app/js/templates.js'
 		  }
 		},
+		concat: {
+		    options: {
+
+		    },
+		    dist: {
+		      	src: ['app_src/js/**/*.js'],
+	      		dest: 'app/js/app.js',
+	    	},
+	  	},
 		jade: {
 			compile: {
 				options: {
@@ -61,8 +70,12 @@ module.exports = function(grunt){
 			//	files: 'app_src/**/*.coffee',
 			//	tasks: ['coffee']
 			//},
+			concat: {
+				files: 'app_src/**/*.js',
+				tasks: [ 'concat' ]
+			},
 			copy: {
-				files: [ 'app_src/**', '!app_src/**/*.styl', '!app_src/**/*.coffee', '!app_src/**/*.jade' ],
+				files: [ 'app_src/**', '!app_src/**/*.styl', '!app_src/**/*.coffee', '!app_src/**/*.jade', '!app_src/js/**/*.js' ],
 				tasks: ['copy']
 			}
 		},
@@ -80,7 +93,7 @@ module.exports = function(grunt){
 	grunt.registerTask(
 	  'scripts', 
 	  'Compiles the JavaScript files.', 
-	  [ 'html2js' ]
+	  [ 'html2js', 'concat' ]
 	);
 
 	grunt.registerTask(
@@ -102,5 +115,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-watch');
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-html2js');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 
 };

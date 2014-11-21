@@ -1,0 +1,7 @@
+.panel.panel-primary
+	.panel-heading
+		h3.panel-title 
+			{{  ctrl.data.title }}
+	.panel-body
+		p(ng-repeat="proOrCon in ctrl.data.proscons")
+			d-pro-or-con-show(data="proOrCon")

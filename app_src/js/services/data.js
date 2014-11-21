@@ -25,7 +25,7 @@
 				created: 'Created',
 				planDecisionDate: 'Plan Decision Date',
 				actualDecisionDate: 'Actual Decision Date',
-				operations: [
+				options: [
 								{
 									title: 'Option 1: Keep functionality in TSS and manage pick up transport operations in TSS',
 									proscons: 	[
