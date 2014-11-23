@@ -1,0 +1,26 @@
+nav(role="navigation").navbar.navbar-default
+	.navbar-header
+		button(type="button", data-toggle="collapse", data-target=".navbar-ex1-collapse").navbar-toggle.collapsed
+			span.sr-only Toggle navigation
+			span.icon-bar
+			span.icon-bar
+			span.icon-bar
+		a(href="#" ).navbar-brand Issue List
+	.collapse.navbar-collapse.navbar-ex1-collapse
+		ul.nav.navbar-nav 
+			li.active: a(href="#/decision/all") View all bullets
+			li: a(href="#/decision/create") Add new bullet
+			li: a(href ng-click="ctrl.changeData()") Update data
+		form(role="search").navbar-form.navbar-left
+			.form-group 
+				input(type="text", placeholder="Search").form-control.col-lg-6
+			button(type="submit").btn.btn-default Submit
+		ul.nav.navbar-nav.navbar-right
+			li: a(href="#") Link
+			li.dropdown
+				a(href="#", data-toggle="dropdown").dropdown-toggle Dropdown <b class="caret"></b>
+				ul.dropdown-menu(role="menu")
+					li: a(href="#") Action
+					li: a(href="#") Another action
+					li: a(href="#") Something else here
+					li: a(href="#") Separated link

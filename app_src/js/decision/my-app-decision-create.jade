@@ -1,0 +1,117 @@
+.container	
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.panel.panel-default
+				.panel-body
+					.row
+						.col-lg-12
+							{{ctrl}}
+							form(class="form-horizontal")
+								fieldset
+									legend Update Base Info
+									.form-group
+										label.col-lg-2.control-label Title
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.title").form-control
+									.form-group
+										label.col-lg-2.control-label Description
+										.col-lg-10
+											textarea(rows="5", ng-model="ctrl.data.description").form-control
+									.form-group
+										label.col-lg-2.control-label Recommender
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.recommender").form-control
+									.form-group
+										label.col-lg-2.control-label Decision Type
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.decisionType").form-control
+									.form-group
+										label.col-lg-2.control-label Decision Forum
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.decisionForum").form-control
+									.form-group
+										label.col-lg-2.control-label Decision Owner
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.decisionOwner").form-control
+									.form-group
+										label.col-lg-2.control-label Status
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.status").form-control
+									.form-group
+										label.col-lg-2.control-label Created
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.created").form-control
+									.form-group
+										label.col-lg-2.control-label Plan Decision Date
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.planDecisionDate").form-control
+									.form-group
+										label.col-lg-2.control-label Actual Decision Date
+										.col-lg-10
+											input(type="text", ng-model="ctrl.data.actualDecisionDate").form-control
+					.row
+						.col-lg-12
+							.pull-right
+								button(type="button", ng-click="ctrl.save()").btn.btn-default Save
+								button(type="button").btn.btn-default Cancel
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.panel.panel-default
+				.panel-body
+					.row
+						.col-lg-12
+							form.form-horizontal
+								legend Update Options
+								.row
+									.col-lg-7
+										.list-group
+											a(href="#").list-group-item
+												h4.list-group-item-heading List group item heading
+												p.list-group-item-text Content goes here
+											a(href="#").list-group-item
+												h4.list-group-item-heading List group item heading
+												p.list-group-item-text Content goes here
+											a(href="#").list-group-item
+												h4.list-group-item-heading List group item heading
+												p.list-group-item-text Content goes here
+								.row
+									.col-lg-7
+										.pull-right
+											button(type="button").btn.btn-default Add options
+											button(type="button").btn.btn-default Cancel
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.panel.panel-default
+				.panel-body
+					.row
+						.col-lg-12
+							form.form-horizontal
+								fieldset
+									legend Update Recomendation
+									.form-group
+										label.col-lg-2.control-label Recomendation
+										.col-lg-10
+											textarea(rows="5", ng-model="ctrl.data.recomendation").form-control
+					.row
+						.col-lg-12
+							.pull-right
+								button(type="button", ng-click="ctrl.save()").btn.btn-default Save
+								button(type="button").btn.btn-default Cancel
+	.row
+		.col-xs-12.col-sm-12.col-md-12.col-lg-12
+			.panel.panel-default
+				.panel-body
+					.row
+						.col-lg-12
+							form.form-horizontal
+								fieldset
+									legend Update Decision
+									.form-group
+										label.col-lg-2.control-label Decision
+										.col-lg-10
+											textarea(rows="5", ng-model="ctrl.data.decision").form-control
+					.row
+						.col-lg-12
+							.pull-right
+								button(type="button", ng-click="ctrl.save()").btn.btn-default Save
+								button(type="button").btn.btn-default Cancel

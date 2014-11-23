@@ -16,24 +16,27 @@ module.exports = function(grunt){
 		},
 		html2js: {
 		  main: {
-		    options: {
-		    	base: 'app_src',
-		    	module: 'app.templates',
-    			singleModule: true
-		    },
-		    src: ['app_src/**/*.tpl.html', 'app_src/**/*.tpl.jade'],
-		    dest: 'app/js/templates.js'
+			options: {
+				base: 'app_src',
+				module: 'app.templates',
+				singleModule: true
+			},
+			src: ['app_src/**/*.tpl.html', 'app_src/**/*.tpl.jade'],
+			dest: 'app/js/templates.js'
 		  }
 		},
+		jshint: {
+			beforeconcat: ['app_src/js/**/*.js']
+		},
 		concat: {
-		    options: {
+			options: {
 
-		    },
-		    dist: {
-		      	src: ['app_src/js/**/*.js'],
-	      		dest: 'app/js/app.js',
-	    	},
-	  	},
+			},
+			dist: {
+				src: ['app_src/js/**/*.js'],
+				dest: 'app/js/app.js',
+			},
+		},
 		jade: {
 			compile: {
 				options: {
@@ -71,8 +74,8 @@ module.exports = function(grunt){
 			//	tasks: ['coffee']
 			//},
 			concat: {
-				files: 'app_src/**/*.js',
-				tasks: [ 'concat' ]
+				files: 'app_src/js/**/*.js',
+				tasks: [ 'jshint', 'concat' ]
 			},
 			copy: {
 				files: [ 'app_src/**', '!app_src/**/*.styl', '!app_src/**/*.coffee', '!app_src/**/*.jade', '!app_src/js/**/*.js' ],
@@ -93,7 +96,7 @@ module.exports = function(grunt){
 	grunt.registerTask(
 	  'scripts', 
 	  'Compiles the JavaScript files.', 
-	  [ 'html2js', 'concat' ]
+	  [ 'html2js', 'jshint', 'concat' ]
 	);
 
 	grunt.registerTask(
@@ -116,5 +119,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-contrib-connect');
 	grunt.loadNpmTasks('grunt-html2js');
 	grunt.loadNpmTasks('grunt-contrib-concat');
+	grunt.loadNpmTasks('grunt-contrib-jshint');
 
 };
