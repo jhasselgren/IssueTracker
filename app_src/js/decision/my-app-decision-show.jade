@@ -3,14 +3,14 @@
 	.panel-heading
 		.row
 			.col-lg-10
-				h3.panel-title {{ctrl.data.id}}. {{ctrl.data.title}} 
+				h3.panel-title {{ctrl.data.decision.decisionId}}. {{ctrl.data.decision.title}} 
 			.col-lg-2.pull-right.text-right
-				i.fa.fa-pencil-square-o
+				
 	.panel-body
 		.row.row-centered
 			.col-lg-11.col-centered
 				h4 Description
-				p {{ctrl.data.description}}
+				p {{ctrl.data.decision.description}}
 		.row.row-centered
 			.col-xs-11.col-sm-11.col-md-11.col-lg-12.col-centered
 				.well
@@ -20,45 +20,45 @@
 						.form-group
 							label.col-lg-3 Recommender
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.recommender}}
+								p {{ctrl.data.decision.recommender}}
 						.form-group
 							label.col-lg-3 Decision Type
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.decisionType}}
+								p {{ctrl.data.decision.decisionType}}
 						.form-group
 							label.col-lg-3 Decision Forum
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.decisionForum}}
+								p {{ctrl.data.decision.decisionForum}}
 						.form-group
 							label.col-lg-3 Decision Owner
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.decisionOwner}}
+								p {{ctrl.data.decision.decisionOwner}}
 						.form-group
 							label.col-lg-3 Status
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.status}}
+								p {{ctrl.data.decision.status}}
 						.form-group
 							label.col-lg-3 Created
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.created}}
+								p {{ctrl.data.decision.created}}
 						.form-group
 							label.col-lg-3 Plan Decision Date
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.planDecisionDate}}
+								p {{ctrl.data.decision.planDecisionDate}}
 						.form-group
 							label.col-lg-3 Actual Decision Date
 							.col-xs-9.col-sm-9.col-md-9.col-lg-9
-								p {{ctrl.data.actualDecisionDate}}
+								p {{ctrl.data.decision.actualDecisionDate}}
 					
 		.row.equal
-			div(ng-repeat="option in ctrl.data.options").col-xs-12.col-sm-12.col-md-4.col-lg-4
+			div(ng-repeat="option in ctrl.data.decision.options").col-xs-12.col-sm-12.col-md-4.col-lg-4
 				d-option-show(data="option")
 		.row
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12
 				.alert.alert-success
-						|<strong>Recommendation:</strong> {{ctrl.data.recommendation}}
+						|<strong>Recommendation:</strong> {{ctrl.data.decision.recommendation}}
 
 		.row
 			.col-xs-12.col-sm-12.col-md-12.col-lg-12
 				.alert.alert-success
-					|<strong>Decision:</strong> {{ctrl.data.decision}}
+					|<strong>Decision:</strong> {{ctrl.data.decision.decision}}

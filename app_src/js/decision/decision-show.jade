@@ -1,13 +1,21 @@
 .container
-	.col-lg-8
-		d-decision-show
-	.col-lg-4
-		.panel.panel-default
-			.panel-heading
-				.row
-					.col-lg-9
-						h3.panel-title Actions
-					.col-lg-3.pull-right.text-right
-						i.fa.fa-plus
-			.panel-body
-				| Basic panel example
+	.row
+		.col-lg-12.submenu
+			a(href="", ng-click="ctrl.view.edit=!ctrl.view.edit", ng-hide="ctrl.view.edit")
+				span.label.label-primary
+					i.fa.fa-pencil-square-o
+					| Edit
+	.row
+		.col-lg-8
+			d-decision-show(data="ctrl.data", ng-hide="ctrl.view.edit")
+			d-decision-update(data="ctrl.data", completed="ctrl.completedEdit()", ng-show="ctrl.view.edit")
+		.col-lg-4
+			.panel.panel-default
+				.panel-heading
+					.row
+						.col-lg-9
+							h3.panel-title Actions
+						.col-lg-3.pull-right.text-right
+							
+				.panel-body
+					| Basic panel example

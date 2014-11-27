@@ -6,3 +6,4 @@ app/
 tmp
 .DS_Store
 .idea
+data/

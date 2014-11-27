@@ -9,6 +9,7 @@ module.exports = function(grunt){
 				expand: true
 			},
 		},
+
 		clean: {
 			build: {
 				src: [ 'app' ]
@@ -52,6 +53,7 @@ module.exports = function(grunt){
 				}]
 			},
 		},
+
 		//coffee: {
 		//	compile: {
 		//		options: {
@@ -90,7 +92,31 @@ module.exports = function(grunt){
 					hostname: '*'
 				}
 			},
-		}
+		},
+		express: {
+		    options: {
+		    
+		    },
+		    dev: {
+		      options: {
+		        script: 'server.js'
+		      }
+		    },
+	    },
+	    shell: {
+		    mongodb: {
+		        command: 'mongod --dbpath ./data',
+		        options: {
+		            async: true,
+		            stdout: false,
+		            stderr: true,
+		            failOnError: true,
+		            execOptions: {
+		                cwd: '.'
+		            }
+		        }
+		    }
+		},
 	});
 
 	grunt.registerTask(
@@ -108,7 +134,7 @@ module.exports = function(grunt){
 	grunt.registerTask(
 		'default',
 		'Watches the project for chnages, automatically builds them and runs a server.',
-		['build', 'connect', 'watch']
+		['build', 'shell:mongodb', 'express:dev', 'watch']
 	);
 
 	grunt.loadNpmTasks('grunt-contrib-copy');
@@ -120,5 +146,6 @@ module.exports = function(grunt){
 	grunt.loadNpmTasks('grunt-html2js');
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-
+	grunt.loadNpmTasks('grunt-express-server');
+	grunt.loadNpmTasks('grunt-shell-spawn');
 };

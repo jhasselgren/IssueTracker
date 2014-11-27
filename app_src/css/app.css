@@ -3,6 +3,23 @@
     margin-right: 0.6em
 }
 
+.submenu{
+    margin-bottom: 1em;
+}
+
+.submenu .label{
+    font-size: 1em;
+}
+
+.submenu .label .fa{
+    font-size: 1em;
+    margin-right: 0.2em
+}
+
+.submenu .btn .fa{
+    margin-right: 0.2em
+}
+
 .row-centered {
     text-align:center;
 }

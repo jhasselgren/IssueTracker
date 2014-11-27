@@ -1,7 +1,14 @@
 .panel.panel-primary
 	.panel-heading
-		h3.panel-title 
-			{{  ctrl.data.title }}
+		.row
+			.col-lg-11
+				h3.panel-title {{  ctrl.data.title }}
+			.col-lg-1.pull-right.text-right
 	.panel-body
-		p(ng-repeat="proOrCon in ctrl.data.proscons")
-			d-pro-or-con-show(data="proOrCon")
+		.row
+			.col-lg-12.well.well-sm
+				i.fa.fa-pencil-square-o
+		.row
+			.col-lg-12
+				p(ng-repeat="proOrCon in ctrl.data.proscons")
+					d-pro-or-con-show(data="proOrCon")

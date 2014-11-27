@@ -17,6 +17,9 @@
     "shelljs": "^0.2.6"
   },
   "dependencies": {
+    "body-parser": "^1.9.3",
+    "ejs": "^1.0.0",
+    "express": "^4.10.4",
     "grunt": "0.x.x",
     "grunt-autoprefixer": "0.2.x",
     "grunt-contrib-clean": "0.5.x",
@@ -29,7 +32,11 @@
     "grunt-contrib-stylus": "0.8.x",
     "grunt-contrib-uglify": "0.2.x",
     "grunt-contrib-watch": "0.5.x",
-    "grunt-html2js": "^0.2.9"
+    "grunt-express-server": "^0.4.19",
+    "grunt-html2js": "^0.2.9",
+    "grunt-shell-spawn": "^0.3.0",
+    "mongodb": "^1.4.22",
+    "mongoose": "^3.8.19"
   },
   "scripts": {
     "postinstall": "bower install",
